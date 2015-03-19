@@ -1,4 +1,14 @@
 /**
+* seajs和requirejs 差异
+*   seajs     采用CMD的规范，依赖就近原则，也就是模块加载不会直接执行而是等待调用才被执行。
+*   requirejs 采用AMD的规范，依赖前置原则，也就是模块加载完就立即执行
+*     requirejs 在模块加载完毕就执行了回调，得到exports，在模块被调用的时候就直接使用，而seajs这时候才被会执行才返回
+*               exports
+                seajs 更多是在浏览器中模拟同步的效果，这样的效果更加容易被理解
+                requirejs则发挥了在浏览器中异步的特性，加快了代码在调用是的速度
+*
+*/
+/**
  * Sea.js 2.3.0 | seajs.org/LICENSE.md
  */
 (function(global, undefined) {
